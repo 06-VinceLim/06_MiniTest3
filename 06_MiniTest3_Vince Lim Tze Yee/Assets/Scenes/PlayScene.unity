@@ -121,6 +121,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &18067420 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100016, guid: 2dc7b382d25903545b405802eb2198ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 1438218735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &18067421
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18067420}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1001 &447082942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -835,6 +880,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b963e4dd8e67e4f8a3e27403000c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Child: {fileID: 1679305299}
+  CharacterMaterials:
+  - {fileID: 2100000, guid: ee2b14d35eb02ec4fbe5b048f36ce820, type: 2}
+  - {fileID: 2100000, guid: a93926ffa042fa94ba3e46f22ec794fc, type: 2}
   timerText: {fileID: 644965358}
   MovingPlatform: {fileID: 1589301765}
   PlayerAnimin: {fileID: 457918259}
@@ -919,7 +968,7 @@ GameObject:
   - component: {fileID: 1106604292}
   m_Layer: 0
   m_Name: Plane3
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1369,6 +1418,22 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: a22153b5107f67242a46ebd1119300c0, type: 2}
+    - target: {fileID: 13700000, guid: 2dc7b382d25903545b405802eb2198ab, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 13700000, guid: 2dc7b382d25903545b405802eb2198ab, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700002, guid: 2dc7b382d25903545b405802eb2198ab, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 13700002, guid: 2dc7b382d25903545b405802eb2198ab, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2dc7b382d25903545b405802eb2198ab, type: 3}
 --- !u!1 &1442307739
@@ -1641,6 +1706,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3576229, y: 0.6802191, z: 0.11389312}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1679305299 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100014, guid: 2dc7b382d25903545b405802eb2198ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 1438218735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1785455213
 PrefabInstance:
   m_ObjectHideFlags: 0

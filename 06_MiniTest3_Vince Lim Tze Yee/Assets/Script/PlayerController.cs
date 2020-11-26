@@ -13,6 +13,12 @@ public class PlayerController : MonoBehaviour
     bool PlusLimit = true; //To check if platform has reach their limits
     float PowerUp; //Calling PowerUp var as float
 
+    Renderer Character; // To access Libary for colour
+    public GameObject Child; // Public game object for you to assign. Check Unity
+    public Material[] CharacterMaterials; //An array declared for you to put assign array size and material publicly in unity.
+
+    //public GameObject Parent;
+
     bool MovingPlat = false; //Moving platform condition
 
     bool BridgeOn; //To check if bridge is turned on or not
@@ -35,6 +41,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Character = Child.GetComponent<SkinnedMeshRenderer>(); // Character is the renderer and child.getcomponent is referencing the object that's tagged child.
         rb = GetComponent<Rigidbody>();
         //PlayerAnimin = GetComponent<Animator>();
     }
@@ -79,7 +86,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
             PlayerAnimin.SetTrigger("JumpingStateTrigger");
-
+            Character.material.color = CharacterMaterials[1].color;
             isOnFloor = false;
         }
 
@@ -142,15 +149,18 @@ public class PlayerController : MonoBehaviour
         if(Player.gameObject.CompareTag("Floor")) //Ensuring player is touching the object with floor tag so you cannot double jump
         {
             isOnFloor = true;
+            Character.material.color = CharacterMaterials[0].color;
         }
 
         if (Player.gameObject.CompareTag("Moving Platform")) //Ensuring player is touching the object with moving platform tag so you cannot double jump
         {
             isOnFloor = true;
+            Character.material.color = CharacterMaterials[0].color;
         }
         if (Player.gameObject.CompareTag("Bridge")) //Ensuring player is touching the object with bridge tag so you cannot double jump
         {
             isOnFloor = true;
+            Character.material.color = CharacterMaterials[0].color;
         }
 
         if (Player.gameObject.CompareTag("Cone") && PowerUp >= 4) // If player touch cone execute the following code
